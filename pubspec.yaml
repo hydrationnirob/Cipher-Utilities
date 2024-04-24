@@ -1,7 +1,7 @@
 name: Flutter_Forge
 description: "Flutter Forge is a utility package designed to assist developers in building Flutter applications more efficiently.."
 version: 0.0.1
-homepage:
+homepage: https://github.com/hydrationnirob/Flutter_Forge.git
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
