@@ -199,7 +199,7 @@ or add into your pubspec.yaml
 
 ## Feedback
 
-If you have any feedback, please reach out to us at fake@fake.com
+If you have any feedback, please reach out to us at rakibullhaques@gmail.com
 
 
 ## 🚀 About Me
