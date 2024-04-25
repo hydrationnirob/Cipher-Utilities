@@ -174,6 +174,8 @@ or add into your pubspec.yaml
     imageType: ImageType.person, // Specify the type of image (e.g., person,carton,robot)
     size: 200, // Specify the size of the image (optional)
   );
+// print a image into the screen that 
+ Cipher.randomFaceAvatar(imageType: ImageType.cartoon),
 
   // Display the generated avatar
   // Note: You need to use this Image widget within a Flutter widget tree
@@ -193,6 +195,7 @@ or add into your pubspec.yaml
   // (e.g., inside a StatelessWidget or a StatefulWidget)
   // For demonstration purposes, here we are just printing the image URL.
   print('Random Avatar URL: ${randomAvatar.image.toString()}');
+  Cipher.randomAvatarImage(name: 'John Doe',size: '100'),
 ```
 
 
