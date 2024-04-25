@@ -206,7 +206,7 @@ If you have any feedback, please reach out to us at rakibullhaques@gmail.com
 
 
 ## 🚀 About Me
-I'm a full stack developer...
+I'm a full stack Flutter developer  ...
 
 
 ## Demo
