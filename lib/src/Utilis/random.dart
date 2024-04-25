@@ -1,7 +1,8 @@
 
 import 'dart:math';
 import 'dart:core';
-import 'package:Flutter_Forge/FlutterForge.dart';
+
+import 'package:Cipher_Utilities/CipherUtilities.dart';
 import 'package:flutter/material.dart';
 
 abstract class RandomForge {
@@ -474,21 +475,14 @@ abstract class RandomForge {
     return random.nextBool();
   }
 
-  static String randomRgbColor() {
+  static Color randomRgbColor() {
     Random random = Random();
     int r = random.nextInt(256);
     int g = random.nextInt(256);
     int b = random.nextInt(256);
-    return 'rgb($r, $g, $b)';
+    return Color.fromRGBO(r, g, b, 1);
   }
 
-  static String randomHexColor() {
-    Random random = Random();
-    int r = random.nextInt(256);
-    int g = random.nextInt(256);
-    int b = random.nextInt(256);
-    return '#${r.toRadixString(16)}${g.toRadixString(16)}${b.toRadixString(16)}';
-  }
 
   static String randomFileName({int length = 10}) {
     const String chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -562,7 +556,7 @@ abstract class RandomForge {
     double? size,
   }) {
     List<String> imagesURL = [
-      for (int i = 1; i <= 10; i++)
+      for (int i = 1; i <= 30; i++)
         'https://mighty.tools/mockmind-api/content/${imageType.toString().split('.').last}/$i.jpg'
     ];
 
