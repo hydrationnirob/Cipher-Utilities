@@ -1,8 +1,7 @@
 
 import 'dart:math';
 import 'dart:core';
-
-import 'package:Cipher_Utilities/CipherUtilities.dart';
+import 'package:cipher_utilities/cipher_utilities.dart';
 import 'package:flutter/material.dart';
 
 abstract class RandomForge {
@@ -556,7 +555,7 @@ abstract class RandomForge {
     double? size,
   }) {
     List<String> imagesURL = [
-      for (int i = 1; i <= 30; i++)
+      for (int i = 1; i <= 20; i++)
         'https://mighty.tools/mockmind-api/content/${imageType.toString().split('.').last}/$i.jpg'
     ];
 

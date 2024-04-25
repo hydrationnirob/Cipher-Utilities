@@ -1,7 +1,9 @@
-name: Cipher_Utilities
+name: cipher_utilities
 description: "Flutter Forge is a utility package designed to assist developers in building Flutter applications more efficiently.."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/hydrationnirob/Flutter_Forge.git
+repository: https://github.com/hydrationnirob/Flutter_Forge.git
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
