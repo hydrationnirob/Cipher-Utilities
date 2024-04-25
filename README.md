@@ -1,165 +1,212 @@
-# Flutter_Forge_Flutter_Package
 
-Flutter Forge is a library designed to facilitate building state based Flutter
-widgets in a modular and composable way so that they can easily be tested,
-extracted, replaced, or reconfigured. This also makes it possible to build
-state based Flutter components in complete isolation as well as being able to
-easily use them in Storybooks. This is normally only possible for dumb widgets.
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
-In doing so it also provides a structured consistent manner of managing state
-mutation within a widget, based on uni-directional data flow and [Redux][]. You can
-think of it like every component effectively has its own scoped [Redux][] flow.
-This aids in making it much harder for developers to make some of the classic
-state management errors, e.g. triggering multiple state mutations in a single
-action, etc.
 
-Overall the core concepts are largely based on concepts introduced in
-[Swift Composable Architecture][]. However, it has been implemented
-specifically with Flutter in mind and various differences in composition
-strategies.
+# Cipher Utilities
 
-## Simple Counter Component Walkthrough
+"Cipher Utilities" is a utility package designed to assist developers in building Flutter applications more efficiently. It likely provides various tools, utilities, or functionalities that simplify common tasks, enhance productivity, or improve the overall development experience in Flutter.
 
-When we define components they are defined in terms of a **formal** &
-**complete** interface. This is what makes them modular so that they can easily
-be tested, extracted, replaced, or reused. In Flutter Forge the `Store` concept
-is used to define this formal interface as each Flutter Forge component takes
-in a specific concrete type of `Store`. The `Store` type is a generic type that
-needs to be concretized by providing concrete types for each of its generic
-type parameters, `State`, `Environment`, and `Action`. Let's define these
-concrete types below.
 
-### State
+## Authors
 
-The following is the `CounterState` class. It is going to be our concrete
-implementation for the generic concept of `State` for our component. It is
-equivalent conceptually to the concept of `State` in [Redux][]. Concrete
-`State` types **must** be `@immutable` and extend `Equatable` so that the
-`Store` can correctly detect state changes by value. In our example below our
-`State` type simply consists of a single integer value named `count`.
+- [@rakibullhaque](https://github.com/hydrationnirob)
+
+
+## Installation 💻
+
+install via ``` flutter pub add: ```
+
+```bash
+  dart pub add cipher utilities
+```
+or add into your pubspec.yaml
+
+```cipher utilities : #latest version```
+    
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=Screenshot+Loading)
+
+
+## Features
+
+- Random text generation
+- Random email generation
+- Random name generation
+- Random address generation
+- Random phone number generation
+- Random date and time generation
+- Random paragraph generation
+- Random IPv4 and IPv6 address generation
+- Random URL generation
+- Random UUID generation
+- Random boolean generation
+- Random RGB and hexadecimal color generation
+- Random file name and file path generation
+- Random MAC address generation
+- Random user agent generation
+- Random avatar image generation
+- Random face avatar image generation
+- Password encryption and decryption
+- Password strength checking
+- Random key generation
+- Random password generation
+
+
+## Password-Encryption Usage
 
 ```dart
-@immutable
-class CounterState extends Equatable {
-  const CounterState({required this.count});
+ // Example usage of password encryption and decryption
+  String password = 'mySuperSecretPassword';
 
-  final int count;
+  // Encrypt the password
+  String encryptedPassword = Cipher.encryptPassword(password);
+  print('Encrypted Password: $encryptedPassword');
 
-  @override
-  List<Object> get props => [count];
-}
+  // Decrypt the encrypted password
+  String decryptedPassword = Cipher.decryptPassword(encryptedPassword);
+  print('Decrypted Password: $decryptedPassword');
+
+  // Check if a password is strong
+  String strongPassword = 'Str0ngP@ssw0rd';
+  print('Is "$strongPassword" a strong password? ${Cipher.isStrongPassword(strongPassword)}');
+
+  // Generate a random key
+  String randomKey = Cipher.generateRandomKey();
+  print('Random Key: $randomKey');
+
+  // Generate a random password
+  String randomPassword = Cipher.generateRandomPassword();
+  print('Random Password: $randomPassword');
+
 ```
-
-### Environment
-
-Because our interface needs to be **complete** for it to be modular. We have to
-facilitate a mechanism of injecting dependencies into our component. This is
-where the `Environment` concept comes into play. It is simply a class that
-provides any functions or data that we would want to dependency inject into the
-component. In our current example we don't need to dependency inject anything.
-So it is an empty class named `CounterEnvironment`.
+## Random-text Usage
 
 ```dart
-class CounterEnvironment {}
+    String randomText = Cipher.randomText(length: 20);
+  print('Random Text: $randomText');
+
+  // Generate random email
+  String randomEmail = Cipher.randomEmail(length: 8);
+  print('Random Email: $randomEmail');
+
+  // Generate random name
+  String randomName = Cipher.randomName();
+  print('Random Name: $randomName');
+
+  // Generate random address
+  String randomAddress = Cipher.randomAddress();
+  print('Random Address: $randomAddress');
+
+  // Generate random phone number
+  String randomPhone = Cipher.randomPhone(length: 10);
+  print('Random Phone: $randomPhone');
+
+  // Generate random date
+  String randomDate = Cipher.randomDate();
+  print('Random Date: $randomDate');
+
+  // Generate random time
+  String randomTime = Cipher.randomTime();
+  print('Random Time: $randomTime');
+
+  // Generate random date and time
+  String randomDateTime = Cipher.randomDateTime();
+  print('Random DateTime: $randomDateTime');
+
+  // Generate random paragraph
+  String randomParagraph = Cipher.randomParagraph(
+    minWordsPerLine: 5,
+    maxWordsPerLine: 10,
+    minSentences: 3,
+    maxSentences: 5,
+  );
+  print('Random Paragraph: $randomParagraph');
+
+  // Generate random IPv4 address
+  String randomIpv4 = Cipher.randomIpv4();
+  print('Random IPv4: $randomIpv4');
+
+  // Generate random IPv6 address
+  String randomIpv6 = Cipher.randomIpv6();
+  print('Random IPv6: $randomIpv6');
+
+  // Generate random URL
+  String randomUrl = Cipher.randomUrl();
+  print('Random URL: $randomUrl');
+
+  // Generate random UUID
+  String randomUuid = Cipher.randomUuid();
+  print('Random UUID: $randomUuid');
+
+  // Generate random boolean value
+  bool randomBool = Cipher.randomBool();
+  print('Random Boolean: $randomBool');
+
+  // Generate random RGB color
+  String randomRgbColor = Cipher.randomRgbColor();
+  print('Random RGB Color: $randomRgbColor');
+
+  // Generate random hexadecimal color
+  String randomHexColor = Cipher.randomHexColor();
+  print('Random Hexadecimal Color: $randomHexColor');
+
+  // Generate random file name
+  String randomFileName = Cipher.randomFileName();
+  print('Random File Name: $randomFileName');
+
+  // Generate random file path
+  String randomFilePath = Cipher.randomFilePath(segments: 4);
+  print('Random File Path: $randomFilePath');
+
+  // Generate random MAC address
+  String randomMacAddress = Cipher.randomMacAddress();
+  print('Random MAC Address: $randomMacAddress');
+
+  // Generate random user agent
+  String randomUserAgent = Cipher.randomUserAgent();
+  print('Random User Agent: $randomUserAgent');
 ```
-
-### Actions
-
-Just as in [Redux][] we have the concept of `Action` which is simply a message
-that you send from our Widget to the store to trigger state change. To get
-better type enforcement within our components we first create an abstract class
-named `CounterAction` that we will use as the base class for our other actions,
-e.g. `IncrementButtonTapped`.
-
+## Random-Avatar Usage
 ```dart
-abstract class CounterAction implements ReducerAction {}
-class IncrementButtonTapped implements CounterAction {}
+// Generate a random face avatar
+  Image randomAvatar = Cipher.randomFaceAvatar(
+    imageType: ImageType.person, // Specify the type of image (e.g., person,carton,robot)
+    size: 200, // Specify the size of the image (optional)
+  );
+
+  // Display the generated avatar
+  // Note: You need to use this Image widget within a Flutter widget tree
+  // (e.g., inside a StatelessWidget or a StatefulWidget)
+  // For demonstration purposes, here we are just printing the image URL.
+  print('Random Avatar URL: ${randomAvatar.image.toString()}');
+
+
+   // Generate a random Text avatar image
+  Image randomAvatar = Cipher.randomAvatarImage(
+    name: 'John Doe', // Specify the name for the avatar
+    size: '200', // Specify the size of the image (optional)
+  );
+
+  // Display the generated avatar
+  // Note: You need to use this Image widget within a Flutter widget tree
+  // (e.g., inside a StatelessWidget or a StatefulWidget)
+  // For demonstration purposes, here we are just printing the image URL.
+  print('Random Avatar URL: ${randomAvatar.image.toString()}');
 ```
 
-### Reducer
 
-Given that Flutter Forge components require a `Store` instance be passed to
-them as the formal interface and `Store` requires it be constructed with a
-`Reducer` we need to create a reducer for this component. A reducer is
-responsible for interpreting `State` and `Action` and computing and returning a
-new `State` as well as optionally `Effects`.
 
-```dart
-final counterReducer = Reducer<CounterState, CounterEnvironment, CounterAction>((state, action) {
-  if (action is IncrementButtonTapped) {
-    return ReducerTuple(CounterState(count: state.count + 1), []);
-  } else {
-    return ReducerTuple(state, []);
-  }
-});
-```
+## Feedback
 
-In the above `counterReducer` we are matching against the
-`IncrementButtonTapped` action and producing a new `CounterState` instance with
-the `count` property incremented by one. *Note:* We are passing `[]` to the
-`ReducerTuple` as we don't want to trigger any `Effects`.
+If you have any feedback, please reach out to us at fake@fake.com
 
-### Widget
 
-Now that we have our formal interface defined by our `State`, `Environment`,
-`Action`, and `Reducer` we can use them in our `ComponentWidget`.
+## 🚀 About Me
+I'm a full stack developer...
 
-```dart
-class CounterComponent extends ComponentWidget<CounterState, CounterEnvironment, CounterAction> {
-  const CounterComponent({super.key, required super.store});
 
-  @override
-  Widget build(context, viewStore) {
-    return Column(children: [
-      Rebuilder(
-          store: store,
-          builder: (context, state, child) {
-            return Text(
-              '${state.count}',
-              style: Theme.of(context).textTheme.headline4,
-            );
-          }),
-      OutlinedButton(
-          onPressed: () => viewStore.send(IncrementButtonTapped()),
-          child: const Text("increment"))
-    ]);
-  }
-}
-```
+## Demo
 
-In the above you can see the use of a `Rebuilder` widget. This is provided by
-Flutter Forge to facilitate rebuilding a portion of the components subtree
-based on the state changing. In the example above we simply wrap the `Text`
-widget that is showing the `state.count` property with `Rebuilder` as that is
-the only piece of the widget subtree that needs to be rebuilt when state
-changes.
+https://github.com/hydrationnirob/Cipher-Utilities.git
 
-### Usage
-
-Now that we have a complete `CounterComponent` what does actual usage of this
-component look like? We simply construct the component and pass it a store that
-conforms to `CounterState`, `CounterEnvironment`, and `CounterAction` which we
-can produce as follows.
-
-```dart
-CounterComponent(
-	store: Store(
-		CounterState(count: 0),
-		counterReducer,
-		CounterEnvironment()
-	)
-)
-```
-
-## Development
-
-For more details in terms of development and the codebase check out the
-`DEVELOPMENT.md`.
-
-## License
-
-`flutter_forge` is Copyright © 2022 UpTech Works, LLC. It is free software, and
-may be redistributed under the terms specified in the LICENSE file.
-
-[Redux]: https://dev.to/codebucks/what-is-redux-simply-explained-2ch7
-[Swift Composable Architecture]: https://github.com/pointfreeco/swift-composable-architecture 
