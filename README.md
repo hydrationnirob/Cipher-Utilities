@@ -1,5 +1,5 @@
 
-![Logo](https://raw.githubusercontent.com/hydrationnirob/Cipher-Utilities/main/logo.png))
+![Logo](https://raw.githubusercontent.com/hydrationnirob/Cipher-Utilities/main/logo.png)
 
 
 # Cipher Utilities
